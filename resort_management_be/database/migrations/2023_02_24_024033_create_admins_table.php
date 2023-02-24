@@ -14,7 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('admins', function (Blueprint $table) {
-            $table->id();
+            $table->increments('admin_id');
+            $table->string('full_name');
+            $table->enum('gender', ['male', 'female'])->default('male');
+            $table->dateTime('birthday');
+            $table->string('email')->unique();
+            $table->string('CMND')->unique();
+            $table->string('address');
+            $table->string('phone')->unique();
+            $table->binary('image')->nullable();
+            $table->boolean('status');
             $table->timestamps();
         });
     }

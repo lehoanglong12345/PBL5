@@ -14,7 +14,20 @@ return new class extends Migration
     public function up()
     {
         Schema::create('employees', function (Blueprint $table) {
-            $table->id();
+            $table->increments('employee_id');
+            $table->string('full_name');
+            $table->enum('gender', ['male', 'female'])->default('male');
+            $table->dateTime('birthday');
+            $table->string('email')->unique();
+            $table->string('CMND')->unique();
+            $table->string('address');
+            $table->string('phone')->unique();
+            $table->string('account_bank');
+            $table->string('name_bank');
+            $table->dateTime('start_time');
+            $table->dateTime('start_end');
+            $table->binary('image')->nullable();
+            $table->boolean('status');
             $table->timestamps();
         });
     }

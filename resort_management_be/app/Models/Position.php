@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Admin extends Model
+class Position extends Model
 {
     use HasFactory;
 
@@ -15,17 +15,9 @@ class Admin extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'full_name',
-        'gender',
-        'birthday',
-        'email',
-        'CMND',
-        'address',
-        'phone',
-        'image',
-        'status',
-        'account_id',
+        'position_name',
+        'basic_pay',
+        'position_rank',
+        'department_id',
     ];
-
-    protected $dates = ['birthday']
 }
