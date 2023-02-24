@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('bill_room', function (Blueprint $table) {
+        Schema::create('extra_services', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bill_room');
+        Schema::dropIfExists('extra_services');
     }
 };
